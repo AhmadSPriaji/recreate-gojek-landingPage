@@ -1,10 +1,10 @@
 "use client";
+import React from 'react'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 import Hero from './component/hero'
 import Kenalin from './component/kenalin'
 import Skala from './component/skala'
-import Hubung from './component/hubung'
 import Carousell from './component/carousell'
 import Tumbuh from './component/tumbuh'
 import Kerja from './component/kerja'
@@ -14,6 +14,13 @@ import Perjalanan from './component/perjalanan'
 import Belum from './component/belum'
 import Footer from './component/footer'
 import { useState } from 'react'
+
+
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -87,7 +94,7 @@ export default function Home() {
             <div className="text-white">
               <a href="#" className="">
                 <img src="https://lelogama.go-jek.com/prime/upload/gojek-horizontal-logo-white.svg" 
-                alt="Gojek" className="w-24 lg:w-32"/>
+                alt="Gojek" className="w-24"/>
               </a>
             </div>
             <div className='flex gap-16'>
@@ -103,7 +110,7 @@ export default function Home() {
                 <img className="w-6 h-6 invert opacity-50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ic_translate_48px.svg/1024px-Ic_translate_48px.svg.png" alt="translete" />
                   <button className="flex items-center gap-2" onClick={() => setIsLangOpen((prev) => !prev)}>
                     <p className='text-white text-base font-semibold text-center'>ID</p>
-                    <span className={isLangOpen ? 'border-r-2 border-b-2 border-white w-2 h-2 -rotate-[135deg]' : 'border-r-2 border-b-2 border-white w-2 h-2 rotate-45'}></span>
+                    <span className={isLangOpen ? 'arrow-down rotate-[225deg]' : 'arrow-down rotate-45'}></span>
                   </button>
                 <div className={isLangOpen ? 'top-12 right-4 text-base absolute font-normal' : 'hidden'}>
                   <ul className="space-y-4 py-8 px-6 w-60 bg-dark text-white rounded-2xl">
@@ -119,16 +126,13 @@ export default function Home() {
       <div className={isNavOpen ? "hidden lg:block" : "block"}>
         <Hero />
         <Kenalin  />
-        <Hubung />
         <Skala />
 
         <Carousell />
         <Tumbuh />
-        <Hubung />
         <Kerja />
         <Membangun />
         <Loyalti />
-        <Hubung />
         <Perjalanan />
         <Belum />
         <Footer />

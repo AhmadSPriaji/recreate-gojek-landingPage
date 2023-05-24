@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* * {
+  background-color: rgba(0,0,200,.4);
+}
+ */
 
 .navbar {
     @apply fixed top-0 left-0 w-full flex items-center z-50 h-16 lg:h-24
@@ -22,10 +26,116 @@
 }
 
 .foot-h4 {
-    @apply text-white font-semibold text-2xl mb-9
+    @apply text-white font-semibold text-lg mb-6
 }
 
 .foot-li {
-    @apply text-xl mb-8 hover:underline
+    @apply text-base mb-4 hover:underline
 }
 
+
+  .variable-width .slick-slide p {
+    background: #00558B;
+    height: 100px;
+    color: #fff;
+    margin: 5px;
+    line-height: 100px;
+    text-align: center;
+  }
+  .center .slick-center h3 {
+    color: #e67e22;
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  .center h3{
+    opacity: 0.8;
+    transition: all 300ms ease;
+  }
+  .content {
+    padding: 20px;
+    margin: auto;
+  }
+  @media (min-width: 701px) {
+    .content {
+      width: 80%;
+    }
+  }
+  @media (max-width: 700px) {
+    .content {
+      width: 70%;
+    }
+  }
+  .slick-slide img {
+    display: block;
+    max-width: 100%;
+  }
+  .slick-slide img.slick-loading {
+    border: 0
+  }
+  .slick-slider {
+    margin: 0;
+  }
+  .slick-dots {
+    margin-left: 0;
+  }
+  .slick-thumb {
+    bottom: -45px;
+  }
+  .slick-thumb li {
+    width: 60px;
+    height: 45px;
+  }
+  .slick-thumb li img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+  }
+  .slick-thumb li.slick-active img{
+      filter: grayscale(0%);
+  }
+  @media (max-width: 768px) {
+    .center {
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+    .center .slick-center h3 {
+      color: #e67e22;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .center h3 {
+      opacity: 0.8;
+      transform: scale(0.95);
+      transition: all 300ms ease;
+    }
+  }
+  .slick-vertical .slick-slide {
+    height: 180px;
+  }
+  .slick-arrow {
+    background-color: grey;
+    display: none !important;
+    
+  }
+  .slick-arrow:hover {
+    background-color: grey;
+  }
+  .slick-arrow:focus {
+    background-color: grey;
+  }
+
+
+
+  .progress {
+    display: block;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to right, black, black);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease-in-out;
+  }

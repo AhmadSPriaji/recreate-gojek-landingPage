@@ -6,13 +6,6 @@ function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
 
-  // const hamburger = querySelector('#hamburger');
-  // const navMenu = querySelector('#nav-menu');
-  // hamburger.addEventListener('click', function() {
-  //   hamburger.classList.toggle('hamburger-active');
-  //   navMenu.classList.toggle('hidden')
-  // })
-
   return(
     <div className="block fixed w-full z-50">
       <nav className="bg-dark top-0 left-0 w-full flex items-center z-10 h-16 xl:h-24">

@@ -11,7 +11,12 @@ module.exports = {
         langit: '#4AC9E3',
       },
       borderRadius: {
-        xxl: '8.5rem',
+        rad: '2.5rem',
+        radMd: '4rem',
+        radLg: '6rem',
+      },
+      fontSize: {
+        judul: '',
       }
 
     },
