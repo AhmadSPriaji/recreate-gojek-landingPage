@@ -28,20 +28,22 @@ function NavList({style}) {
   const [isListOpen1, setIsListOpen1] = useState(false);
   const [isListOpen2, setIsListOpen2] = useState(false);
   return (
-    <ul className={style}>
+    <ul className={`${style} px-8 lg:px-0`}>
       <li className="nav-list"><a href="#">Beranda</a></li>
-      <li className="nav-list">
+      <li className="nav-list relative">
         <div className="flex gap-4 items-center" onClick={() => setIsListOpen1((prev) => !prev)} >
           <a href="#">Gabung jadi Mitra</a>
           <button className='flex'>
             <span className={isListOpen1 ? 'arrow-down rotate-[225deg]' : 'arrow-down rotate-45'}></span>
           </button>
         </div>
-        <div className={isListOpen1 ? 'text-base lg:absolute font-normal' : 'hidden' }>
-          <ul className="space-y-4 py-8 px-6 w-60 bg-dark rounded-2xl">
-            <li><a href="#" className="">Mitra Driver</a></li>
-            <li><a href="#" className="">Mitra Usaha</a></li>
-          </ul>
+        <div className={`transition duration-300 ease-in-out ${isListOpen1 ? 'lg:translate-y-6' : '-translate-y-3'}`}>
+          <div className={`text-base lg:absolute font-normal transition-all duration-300 ease-in-out ${isListOpen1? 'visible opacity-100' : ' opacity-0 invisible h-0'} `}>
+            <ul className={`space-y-4 py-8 px-6 w-60 bg-dark rounded-2xl`}>
+              <li><a href="#" className="">Mitra Driver</a></li>
+              <li><a href="#" className="">Mitra Usaha</a></li>
+            </ul>
+          </div>
         </div>
       </li>
       <li className="nav-list"><a href="#">Karir</a></li>
@@ -52,13 +54,15 @@ function NavList({style}) {
             <span className={isListOpen2 ? 'arrow-down rotate-[225deg]' : 'arrow-down rotate-45'}></span>
           </button>
         </div>
-        <div className={isListOpen2 ? 'text-base lg:absolute font-normal' : 'hidden'}>
-          <ul className="space-y-4 py-8 px-6 w-60 bg-dark rounded-2xl">
+        <div className={`transition duration-300 ease-in-out ${isListOpen2 ? 'lg:translate-y-4' : '-translate-y-3'}`}>
+          <div className={`text-base lg:absolute font-normal transition-all duration-300 ease-in-out ${isListOpen2? 'visible opacity-100' : ' opacity-0 invisible h-0'} `}>
+            <ul className={`space-y-4 py-8 px-6 w-60 bg-dark rounded-2xl`}>
             <li><a href="#" className="">Tentang</a></li>
             <li><a href="#" className="">Newsroom</a></li>
             <li><a href="#" className="">Aman</a></li>
             <li><a href="#" className="">Sustainability</a></li>
-          </ul>
+            </ul>
+          </div>
         </div>
       </li>
       <li className="nav-list"><a href="#">Produk</a></li>
@@ -71,8 +75,8 @@ function NavList({style}) {
 export default function Home() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-
   const [isBgChange, setIsBgChange] = useState(false);
+  const [isShowNav, setIsShowNav] = useState(true);
   const changeNavbarBg = () => {
     if (window.scrollY > 0) {
       setIsBgChange(1);
@@ -80,6 +84,17 @@ export default function Home() {
       setIsBgChange(0);
     }
   };
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll =  function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      setIsShowNav(true);
+    } else {
+      setIsShowNav(false);
+    }
+    prevScrollpos = currentScrollPos;
+  }
+
   if (typeof window !== 'undefined') {
     console.log('You are on the browser'); 
     window.addEventListener('scroll', changeNavbarBg);
@@ -88,7 +103,7 @@ export default function Home() {
   }
   return (
     <main className={styles.main}>
-      <nav className={isBgChange ? 'navbar bg-dark' : 'navbar bg-transparent'}>
+      <nav className={`navbar ${isBgChange ? 'bg-dark' : 'bg-transparent'} ${isShowNav ? 'top-0 ' : '-translate-y-16 lg:-translate-y-24'}`}>
         <div className="container mx-auto">
           <div className="flex items-center justify-between relative px-8 gap-16">
             <div className="text-white">
