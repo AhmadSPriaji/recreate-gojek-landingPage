@@ -1,3 +1,6 @@
+import NavigationSlide from '../swiper/NavigationSlide'
+import React, { useState } from 'react' 
+
 export default function Perjalanan () {
   return(
     <section className="z-20 bg-langit">
@@ -15,6 +18,7 @@ export default function Perjalanan () {
           </div>
         </div>
       </div>
+      <NavigationSlide />
       <div className="container mx-auto bg-langit ">
         <div className="mx-auto flex justify-center pb-32">
           <div className="flex justify-center w-1/2">

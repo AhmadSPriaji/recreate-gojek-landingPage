@@ -20,7 +20,7 @@ export default function App() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper bg-transparent"
       >
         <SwiperSlide>
             <div key={1} >
