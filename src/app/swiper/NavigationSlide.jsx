@@ -12,7 +12,7 @@ import { Navigation } from "swiper";
 
 function Slide(props) {
     return (
-        <div>
+        <div className="text-center">
             <h3 className="text-dark text-2xl lg:text-4xl font-bold text-center mb-4">
               {props.title}
             </h3>
@@ -37,7 +37,7 @@ export default function App() {
             onBeforeInit={(swiper) => {
                 swiperRef.current = swiper;
             }}
-            className="mySwiper w-[410px]"
+            className="mySwiper w-[425px] m-0"
         >
             <SwiperSlide>
                 <Slide 
